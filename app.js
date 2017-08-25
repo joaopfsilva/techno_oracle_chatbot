@@ -184,6 +184,28 @@ function handleEcho(messageId, appId, metadata) {
 
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
+		case "job-enquiry":
+            let replies = [
+			      {
+			        "content_type":"text",
+			        "title":"Accountant",
+			        "payload":"<POSTBACK_PAYLOAD>",
+			      },
+			      {
+			        "content_type":"text",
+			        "title":"Sales",
+			        "payload":"<POSTBACK_PAYLOAD>"
+			      },
+			      {
+			        "content_type":"text",
+			        "title":"Not interested",
+			        "payload":"<POSTBACK_PAYLOAD>"
+			      }
+			    ];
+
+			sendQuickReply(sender, responseText, replies);
+
+			break;
 		default:
 			//unhandled action, just send back the text
 			sendTextMessage(sender, responseText);
