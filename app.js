@@ -185,6 +185,9 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
 		case "job-enquiry":
+		console.log("job enquiryyyyyy");
+		console.log(responseText);
+
             let replies = [
 			      {
 			        "content_type":"text",
